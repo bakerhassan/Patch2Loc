@@ -1,0 +1,25 @@
+
+### VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+**/.vscode
+
+# Lightning-Hydra-Template
+data/
+logs/
+wandb/
+!csv/
+.autoenv
+.idea
+# pc_environment.env
+outputlog*
+errorlog*
+
+models/
+__pycache__/
+**/*.pyc
+**/*/__pycache__/
