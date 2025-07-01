@@ -1,10 +1,11 @@
 # Patch2Loc
-Codebase for our Patch2Loc paper [Paper Name ](Link to paper).
+Codebase for our Patch2Loc paper [Patch2Loc: Learning to Localize Patches for Unsupervised Brain Lesion Detection
+](https://arxiv.org/abs/2506.22504).
 
 ![](schematic_2.png)
 
 **Abstract**: 
-TODO
+Detecting brain lesions as abnormalities observed in magnetic resonance imaging (MRI) is essential for diagnosis and treatment. In the search of abnormalities, such as tumors and malformations, radiologists may benefit from computer-aided diagnostics that use computer vision systems trained with machine learning to segment normal tissue from abnormal brain tissue. While supervised learning methods require annotated lesions, we propose a new unsupervised approach (Patch2Loc) that learns from normal patches taken from structural MRI. We train a neural network model to map a patch back to its spatial location within a slice of the brain volume. During inference, abnormal patches are detected by the relatively higher error and/or variance of the location prediction. This generates a heatmap that can be integrated into pixel-wise methods to achieve finer-grained segmentation. We demonstrate the ability of our model to segment abnormal brain tissues by applying our approach to the detection of tumor tissues in MRI on T2-weighted images from BraTS2021 and MSLUB datasets and T1-weighted images from ATLAS and WMH datasets. We show that it outperforms the state-of-the art in unsupervised segmentation. 
 ## Data
 *I followed @FinnBehrendt data pre-processing*. 
 
