@@ -1,0 +1,37 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=example_full.yaml
+
+defaults:
+  - override /trainer: default.yaml # override trainer to null so it's not loaded from main config defaults...
+  - override /model: patch2loc.yaml
+  - override /datamodule: IXI.yaml
+datamodule:
+  cfg:
+    rescaleFactor: 1
+    imageDim: [192,192,100]
+    mode: t2
+    sample_set: True
+    aug_intensity: False
+    batch_size: 356
+logger:
+  wandb:
+    project: path2loc
+
+model:
+  patch_percentage: .125
+  abnormality_analysis: False
+
+ckpt_path: last 
+
+trainer:
+  max_epochs: 15000
+name : path2loc
+seed: 3141
+test_after_training: False
+onlyEval: False
+num_folds: 4
+start_fold: 0
+load_checkpoint: /lustre/scratch/bakerh/cvpr/CVPR2025/models/patch2loc_t2
+checkpoint: 'best'

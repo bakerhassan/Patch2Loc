@@ -1,0 +1,34 @@
+  _target_: src.models.patch2loc_model.Patch2Loc
+  imageDim: ${datamodule.cfg.imageDim} 
+  rescaleFactor: ${datamodule.cfg.rescaleFactor}
+  patch_percentage: .125
+  rejection_rate: .2
+  num_patches_per_batch: 8096
+  latent_dim: 512
+  compile: False
+  lr: 1e-2
+  beta: .5
+  loss_type: 'beta_nll'
+  median_filter_size: 7
+  abnormality_analysis: True
+  cfg:
+    name: patch2loc
+
+    resizedEvaluation: ${datamodule.cfg.resizedEvaluation}
+    imageDim: ${datamodule.cfg.imageDim} 
+    rescaleFactor: ${datamodule.cfg.rescaleFactor}
+    interRes: ${datamodule.cfg.interRes}
+    cropMode: ${datamodule.cfg.cropMode}
+    spatialDims: 2D
+
+    ## Evaluation
+    saveOutputImages: True  
+    evalSeg: True
+    threshold: auto
+
+    ## General postprocessing
+    pad: ${datamodule.cfg.pad}
+    erodeBrainmask: True
+    medianFiltering: True
+    unsupervised_quantile: 98
+    mode: ${datamodule.cfg.mode}

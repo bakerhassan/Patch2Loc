@@ -1,0 +1,2 @@
+grad_norm:
+  _target_: src.callbacks.grad_norm_callback.GradNormCallback
